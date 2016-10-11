@@ -9,6 +9,9 @@ class ArticlesController < ApplicationController
 	# show a particular record
 	def show
 		@article = Article.find(params[:id])
+
+		@comment = Comment.new
+		@comment.article_id = @article.id
 	end
 		
 	# create a new record instance to manipulate
