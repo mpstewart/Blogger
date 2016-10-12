@@ -38,6 +38,11 @@ class ArticlesController < ApplicationController
 	# same path as show, the difference is the HTTP method used
 	def destroy
 		@article = Article.find(params[:id])
+		@article.comments.each do |comment|
+			comment.destroy
+		end
+
+
 		@article.destroy
 
 		flash.notice = "Article '#{@article.title}' Deleted!"

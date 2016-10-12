@@ -1,11 +1,19 @@
 <h1>Articles</h1>
 
 <ul id="articles">
+	<% if Article.count < 1 %>
+		<br>
+		<p>There are no articles to display. Click the New Article link below</p>
+	<% end %>
+
 	<% @articles.each do |article| %>
 		<li>
-			<%= link_to article.title, article_path(article) %>
+			<%= link_to article.title, article_path(article),
+			class: 'article_title', id: "article_#{article.id}" %>
 		</li>
 	<% end %>
 </ul>
-
-<%= link_to "New Article", new_article_path %>
+<p>
+	<br><br>
+	<%= link_to "New Article", new_article_path %>
+</p>
