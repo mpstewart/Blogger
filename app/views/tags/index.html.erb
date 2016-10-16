@@ -1,0 +1,14 @@
+<h1>Tags</h1>
+
+<p>
+	<ul>
+		<% @tags.each do |tag| %>
+			<li><%= link_to tag.name, tags_path(tag) %> (<%= tag.articles.count %>)</i>
+		<% end %>
+	</ul>
+</p>
+
+<br>
+<br>
+<br>
+<%= link_to "Home", articles_path %>
