@@ -5,6 +5,7 @@
 <br>
 <p>
 	Tags:
+	<% if @article.tags.count == 0 %> This article has no tags <% end %>
 	<% @article.tags.each do |tag| %>
 		<%= link_to tag.name, tag_path(tag) %>
 	<% end %>

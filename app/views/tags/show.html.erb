@@ -12,5 +12,6 @@
 <br>
 
 <p>
-	<%= link_to "Home", articles_path %>
+	<%= link_to "Home", articles_path %><br>
+	<%= link_to "Delete This Tag", tag_path(@tag), method: :delete, data: {confirm: "Are you sure want to delete this tag?"} %> <br>
 </p>

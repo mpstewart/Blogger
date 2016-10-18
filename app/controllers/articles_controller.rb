@@ -37,11 +37,18 @@ class ArticlesController < ApplicationController
 
 	# same path as show, the difference is the HTTP method used
 	def destroy
+		# destroy all comments
 		@article = Article.find(params[:id])
 		@article.comments.each do |comment|
 			comment.destroy
 		end
 
+		# destroy all tags associated with this article
+		@article.tags.each do |tag|
+			if tag.articles.count - 1 == 0
+				tag.destroy
+			end
+		end
 
 		@article.destroy
 
