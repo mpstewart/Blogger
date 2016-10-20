@@ -4,11 +4,12 @@ ruby '2.3.0'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '~> 5.0.0', '>= 5.0.0.1'
-# Use sqlite3 as the database for Active Record
+# Use sqlite for development
 group :development, :test do
 	gem 'sqlite3'
 end
 
+# use postgres for production/heroku deployment
 group :production do
 	gem 'pg'
 end
@@ -23,6 +24,9 @@ gem 'uglifier', '>= 1.3.0'
 gem 'coffee-rails', '~> 4.2'
 # See https://github.com/rails/execjs#readme for more supported runtimes
 # gem 'therubyracer', platforms: :ruby
+
+# Use paperclip for file uploading and management
+gem "paperclip"
 
 # Use jquery as the JavaScript library
 gem 'jquery-rails'
