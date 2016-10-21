@@ -1,5 +1,9 @@
 <h1><%= @article.title %></h1>
 
+<% if @article.image.exists? %>
+	<p><%= image_tag @article.image.url %></p>
+<% end %>
+
 <p><%= @article.body %></p>
 
 <br>
@@ -21,9 +25,4 @@
 <!-- Render a collection of comments, alternative to each loop -->
 <%= render partial: 'articles/comment', collection: @article.comments %><br>
 <%= render partial: 'comments/form' %>
-
-<p>
-	<br>
-	<%= link_to "Home", articles_path() %>
-</p>
 

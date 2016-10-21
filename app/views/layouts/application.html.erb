@@ -10,6 +10,14 @@
 
   <body>
   	<p class="flash"><%= flash.notice %></p>
+    
     <%= yield %>
+
+    <p>
+      <br><br><br><br>
+      <%= link_to "Home", articles_path %>
+    </p>
+
   </body>
+
 </html>
