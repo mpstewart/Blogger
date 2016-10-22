@@ -23,7 +23,10 @@
         <% else %>
           <%= link_to "Login", login_path %>
         <% end %><br>
-        <%= link_to "Home", articles_path %>
+		<%= link_to "Home", articles_path %><br>
+		<% if !Author.exists? %>
+			<%= link_to "Create Author", new_author_path %>
+		<% end %>
       </h6>
     </div>
   </div>
