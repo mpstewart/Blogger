@@ -1,5 +1,6 @@
 class ArticlesController < ApplicationController
 	include ArticlesHelper
+	before_filter :require_login, only: [ :new, :create, :update, :edit, :destroy ]
 
 	# show all records
 	def index
@@ -13,19 +14,18 @@ class ArticlesController < ApplicationController
 		@comment = Comment.new
 		@comment.article_id = @article.id
 	end
-		
+
 	# create a new record instance to manipulate
 	# show the new.html.erb template
 	def new
 		@article = Article.new
 	end
-	
+
 	# receive the form information and make the new record
 	# article_params is defined in articles_helper.rb
 	def create
 		@article = Article.new(article_params)
 		@article.save
-
 		flash.notice = "Article '#{@article.title}' Created!"
 
 		redirect_to article_path(@article)
