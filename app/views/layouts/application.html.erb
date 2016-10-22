@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Blogger</title>
+    <title>mpstewart's Blogger</title>
     <%= csrf_meta_tags %>
 
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
@@ -10,22 +10,29 @@
 
   <body>
   	<p class="flash">
-    <%= flash.notice %>
-  </p>
-  <div id="container">
-    <div id="content">
-      <%= yield %>
-      <hr>
-      <h6>
-        <% if logged_in? %>
-          <%= "Logged in as #{current_user.email}" %><br>
-          <%= link_to "Logout", logout_path %>
-        <% else %>
-          <%= link_to "Login", login_path %>
-        <% end %><br>
-        <%= link_to "Home", articles_path %>
-      </h6>
+      <%= flash.notice %>
+    </p>
+
+    <div id="navbar">
+      <ul>
+        <li><%= link_to "Articles", articles_path %></li>
+        <li><%= link_to "Tags", tags_path %></li>
+      </ul>
     </div>
-  </div>
+
+    <div id="container">
+      <div id="content">
+        <%= yield %>
+        <hr>
+        <h6>
+          <% if logged_in? %>
+            <%= "Logged in as #{current_user.email}" %><br>
+            <%= link_to "Logout", logout_path %>
+          <% else %>
+            <%= link_to "Login", login_path %>
+          <% end %><br>
+        </h6>
+      </div>
+    </div>
   </body>
 </html>
