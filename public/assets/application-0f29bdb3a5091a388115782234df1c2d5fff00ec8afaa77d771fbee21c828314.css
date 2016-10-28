@@ -1,0 +1,60 @@
+/* line 3, /Users/mike/Developer/odin/blogger/app/assets/stylesheets/style.css.scss */
+body {
+  background-color: #AAA;
+  font-family: Verdana, Helvetica, Arial;
+  font-size: 14px;
+}
+
+/* line 11, /Users/mike/Developer/odin/blogger/app/assets/stylesheets/style.css.scss */
+a {
+  color: #0000FF;
+}
+/* line 13, /Users/mike/Developer/odin/blogger/app/assets/stylesheets/style.css.scss */
+a img {
+  border: none;
+}
+
+/* line 18, /Users/mike/Developer/odin/blogger/app/assets/stylesheets/style.css.scss */
+.clear {
+  clear: both;
+  height: 0;
+  overflow: hidden;
+}
+
+/* line 24, /Users/mike/Developer/odin/blogger/app/assets/stylesheets/style.css.scss */
+#container {
+  width: 75%;
+  margin: 0 auto;
+  background: #fff;
+  padding: 20px 40px;
+  border: solid 1px black;
+  margin-top: 20px;
+}
+
+/* line 33, /Users/mike/Developer/odin/blogger/app/assets/stylesheets/style.css.scss */
+#content {
+  clear: both;
+  padding-top: 20px;
+}
+
+/* line 38, /Users/mike/Developer/odin/blogger/app/assets/stylesheets/style.css.scss */
+#navbar li {
+  display: inline;
+  margin: 5px 25px;
+}
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, vendor/assets/stylesheets,
+ * or any plugin's vendor/assets/stylesheets directory can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any other CSS/SCSS
+ * files in this directory. Styles in this file should be added after the last require_* statement.
+ * It is generally better to create a new file per style scope.
+ *
+
+
+ */
+
